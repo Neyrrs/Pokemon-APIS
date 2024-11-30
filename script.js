@@ -7,24 +7,26 @@ function submitPokemonHandler(){
 
 async function getPokemon(pokemonName, pokemonImage){
     
-    const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.value.toLowerCase()}`);
-    if(!promise.ok) {
-        throw new Error("Something went wrong")
-    }
-    const data = await promise.json();
-    pokemonImage.src = data.sprites.front_default;
-    pokemonImage.style.display = "block";
+    try{
 
-    const detailsContainer = document.getElementById("detailsContainer");
-    const pokemonNames = document.getElementById("pokemonNames");
-    pokemonNames.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1);
-    const pokemonHeight = document.getElementById("pokemonHeight");
-    pokemonHeight.innerHTML = `${data.height}Dm`;
-    const pokemonWeight = document.getElementById("pokemonWeight");
-    pokemonWeight.innerHTML = `${data.weight}Kg`;
-    const pokemonExp = document.getElementById("pokemonExp");
+        const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.value.toLowerCase()}`);
+        if(!promise.ok) {
+            throw new Error("Something went error");
+        }
+        const data = await promise.json();
+        pokemonImage.src = data.sprites.front_default;
+        pokemonImage.style.display = "block";
 
-    pokemonExp.innerHTML = `Exp: ${data.base_experience}`;
+        const detailsContainer = document.getElementById("detailsContainer");
+        const pokemonNames = document.getElementById("pokemonNames");
+        pokemonNames.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+        const pokemonHeight = document.getElementById("pokemonHeight");
+        pokemonHeight.innerHTML = `${data.height}Dm`;
+        const pokemonWeight = document.getElementById("pokemonWeight");
+        pokemonWeight.innerHTML = `${data.weight}Kg`;
+        const pokemonExp = document.getElementById("pokemonExp");
+
+        pokemonExp.innerHTML = `Exp: ${data.base_experience}`;
 
         detailsContainer.style.display = "flex";
         pokemonNames.style.display = "block";
@@ -33,6 +35,9 @@ async function getPokemon(pokemonName, pokemonImage){
         pokemonExp.style.display = "block";
     
         console.log(data)
+    }catch{
+        window.alert("Invalid Pokemon Name");
+    }
 }
 
 function clearing(inputPokemon){
