@@ -1,0 +1,131 @@
+*{
+    font-family: "Poppins", serif;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(15, 15, 15);
+}
+
+.btnSubmit{
+    margin: 0px;
+    padding: 2px 20px;
+    border-radius: 4px;
+    font-size: 1em;
+    border: hsl(0, 0%, 0%) 1px solid;
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 500;
+    margin-top: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.btnSubmit:hover{
+    background-color: white;
+    color: hsl(0, 0%, 0%);
+    cursor: pointer;
+}
+
+.btnSubmit:active{
+    transform: scale(0.97);
+    background-color: hsl(0, 0%, 10%);
+    color: hsl(0, 0%, 100%);
+}
+
+.inputPokemon{
+    margin: 0px 45px;
+    width: 200px;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: 15px;
+    height: 30px;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    background-color: rgb(241, 241, 241);
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.input{
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    margin: 0px 20px;
+}
+
+.output{
+    height: 300px;    
+    width: 200px;
+}
+
+.titleText, .pokemon{
+    font-size: 1.5em;
+    margin: 30px 50px 50px 50px;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .output{
+        width: 300px;
+    }
+    .container{
+        margin: 3rem 0px;
+    }
+}
+
+.image-container{
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 20px 50px 0px 40px;
+    font-weight: 600;
+}
+
+#pokemonImage{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: none;
+}
+
+.pokemonNamesTitle{
+    text-align: center;
+    display: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.details-container{
+    display: flex;
+    gap: 10px;
+    padding: 0px 5px;
+
+    span{
+        margin-top: 10px;
+        display: none;
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 1px 5px;
+        border-radius: 3px;
+        border: black solid 1px;
+        width: 40px;
+    }
+}
