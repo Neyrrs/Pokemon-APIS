@@ -21,7 +21,7 @@ cd pokemon-APIS
 Cukup buka file `index.html` di browser favorit Anda.  
 
 ### 3️⃣ Fitur Utama  
-✅ Mencari Pokémon berdasarkan nama atau ID  
+✅ Mencari Pokémon berdasarkan nama
 ✅ Menampilkan gambar, tipe, dan statistik dasar Pokémon  
 ✅ UI sederhana dan responsif  
 
